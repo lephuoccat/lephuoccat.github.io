@@ -17,6 +17,7 @@
   "author": "Ryan Fitzgerald",
   "license": "MIT",
   "devDependencies": {
+    "set-value": ">=4.0.1"
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-plumber": "^1.2.0",
