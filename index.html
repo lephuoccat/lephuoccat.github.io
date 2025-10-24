@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="physics.png" type="image/x-icon">
+    <link rel="icon" href="physics.png" type="image/x-icon">
+    <title>Cat P. Le Ph.D.</title>
+    <meta name="description" content="A Personal Portfolio of Cat P. Le">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/typography.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+
+    <script defer src="./js/script.js"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a class="nav-title-link" href="./index.html">
+            <span class="nav-title">Cat P. Le Ph.D.</span>
+        </a>
+        <a class="button" href="mailto:calvine.le@gmail.com">
+            <span class="button-text">Contact Me</span>
+        </a>
+    </div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div id="main-content">
+
+        <!-- PORTFOLIO HEADER -->
+        <div id="portfolio-header">
+            <div id="portfolio-header-image-container">
+                <img src="./assets/images/portrait.jpg" class="portfolio-header-image" alt="Portrait of Cat P. Le">
+
+                <a class="no-underline" target="_blank" href="https://www.linkedin.com/in/catple/">
+                    <span class="image-caption">Machine Learning Scientist, AI Enthusiast</span>
+                </a>
+
+                <!-- Social Buttons Below Portrait -->
+                <div class="social-buttons">
+                    <a class="social-btn linkedin" target="_blank" href="https://www.linkedin.com/in/catple/">
+                        <img src="./assets/icons/linkedin.svg" alt="LinkedIn" />
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="social-btn google" target="_blank" href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en">
+                        <img src="./assets/icons/google.svg" alt="Google Scholar" />
+                        <span>Scholar</span>
+                    </a>
+                    <a class="social-btn email" href="mailto:calvine.le@gmail.com">
+                        <img src="./assets/icons/mail.svg" alt="Email" />
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="portfolio-header-text-container">
+                <div class="header-text">
+                    <span class="main-title">Hey, I'm @CatLe</span>
+                    <div class="body-text">I’m an AI scientist specializing in Machine Learning, particularly Learning Algorithms, Computer Vision, and Natural Language Processing.</div>
+                </div>
+                <a class="button" href="./assets/docs/CatLe_CV.pdf" target="_blank">
+                    <span class="button-text">View CV</span>
+                </a>
+                <a class="button" href="./assets/docs/CatLe_Resume.pdf" target="_blank">
+                    <span class="button-text">View Résumé</span>
+                </a>
+
+                <a class="button" id="my-work-link">
+                    <span class="button-text">Check out my projects</span>
+                    <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <div id="about-section">
+            <span class="subheader-text">About Me</span>
+            <div class="about-section-content">
+                <div class="body-text">
+                    I earned a B.S. degree Summa Cum Laude in Electrical and Computer Engineering from Rutgers University in 2016, 
+                    followed by an M.S. degree in Electrical Engineering from the California Institute of Technology (Caltech) in 2017, 
+                    and a Ph.D. in Machine Learning from Duke University in 2023. During my doctoral studies at Duke, I conducted pioneering research on 
+                    Task Affinity and its applications in Machine Learning under the mentorship of Dr. Vahid Tarokh. 
+                    I currently serve as an AI Safety Scientist at UL Solutions, where I develop and apply advanced machine learning techniques to ensure safe 
+                    and reliable AI systems in real-world applications.
+                </div>
+                <div class="body-text">
+                    My research interests span Machine Learning, Computer Vision, and Natural Language Processing, with a particular focus on Transfer Learning, 
+                    Few-Shot Learning, Continual Learning, Multi-Task Learning, and Neural Architecture Search. Throughout my academic career, 
+                    I have been recognized with numerous honors, including membership in the Matthew Leydt Society, Outstanding Engineering Scholar, 
+                    John B. Smith Award, Nikola Tesla Scholar, and the E. M. Toomey Scholarship. I am also an active member of the Tau Beta Pi, Eta Kappa Nu, 
+                    and Sigma Alpha Pi honor societies, reflecting my commitment to excellence and leadership in both engineering and research.
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTS / MY WORK SECTION -->
+        <div id="my-work-section">
+            <span class="subheader-text">My Projects</span>
+
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="./assets/images/project_CFLSTM.png" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Open-Domain Dialog Evaluation</div>
+                        <div class="body-text project-card-text">Improving open-domain dialog evaluation using causal inference models. Best Paper Runner-Up at IWDSD 2023.</div>
+                    </div>
+                    <a class="button" target="_blank"href="https://arxiv.org/abs/2301.13372">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="./assets/images/project_causal.png" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Transfer Learning for ITE Estimation</div>
+                        <div class="body-text project-card-text">Applying transfer learning for Individual Treatment Effect estimation in UAI 2023 research.</div>
+                    </div>
+                    <a class="button" target="_blank"href="https://arxiv.org/abs/2210.00380">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="./assets/images/project_few-shot.png" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Task Affinity in Few-Shot Learning</div>
+                        <div class="body-text project-card-text">Using maximum bipartite matching to evaluate task affinity in few-shot learning scenarios (ICLR 2022).</div>
+                    </div>
+                    <a class="button" target="_blank"href="https://openreview.net/forum?id=u2GZOiUTbt">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="./assets/images/project_TAS.png" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Fisher Task Distance & NAS</div>
+                        <div class="body-text project-card-text">Applying Fisher Task Distance in Neural Architecture Search to improve model selection (IEEE Access 2022).</div>
+                    </div>
+                    <a class="button" target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9766163">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="./assets/images/project_TAS2.png" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Task-Aware NAS (TA-NAS)</div>
+                        <div class="body-text project-card-text">Task-Aware Neural Architecture Search framework for efficient model design (ICASSP 2021).</div>
+                    </div>
+                    <a class="button" target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9414412">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="./assets/images/project_TAS3.png" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Automated ML via Transfer Learning</div>
+                        <div class="body-text project-card-text">Improved automated machine learning by leveraging transfer learning techniques (CoRR 2021).</div>
+                    </div>
+                    <a class="button" target="_blank" href="https://arxiv.org/abs/2103.00241">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="./assets/images/project_encoding.png" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Supervised Encoding</div>
+                        <div class="body-text project-card-text">Supervised encoding for discrete representation learning (ICASSP 2020).</div>
+                    </div>
+                    <a class="button" target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9054118">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-icons">
+            <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/catple/">
+                <img src="./assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn"/>
+            </a>
+            <a class="icon-link" target="_blank" href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en">
+                <img src="./assets/icons/google.svg" class="footer-icon" alt="Google Scholar"/>
+            </a>
+            <a class="icon-link" href="mailto:calvine.le@gmail.com">
+                <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email"/>
+            </a>
+        </div>
+
+        <!-- Copyright line -->
+        <div class="copyright">
+            © <span id="current-year"></span> Cat P. Le. All rights reserved.
+        </div>
+    </footer>
+
+<script>
+  // Automatically updates the copyright year
+  document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
