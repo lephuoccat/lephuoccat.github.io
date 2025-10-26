@@ -98,3 +98,20 @@ body, a.button {
   color: #007bffd5;
   font-weight: 700;
 }
+
+.aboutme {
+  font-family: 'Pacifico', cursive !important;
+  font-size: 2.5rem; /* adjust to fit your style */
+  color: #2a211c; /* optional: change the color */
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.myproject {
+  font-family: 'Pacifico', cursive !important;
+  font-size: 2.5rem; /* Emphasis */
+  color: #2a211c;
+  display: inline-block;
+  text-shadow: 3px 3px 0 #716d69; /* Retro glow */
+  margin-bottom: 0.5rem;
+}
