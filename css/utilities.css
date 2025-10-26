@@ -42,9 +42,30 @@ a.icon-link:hover {
   text-decoration: none;
 }
 
-.nav-title-link:hover {
-  text-decoration: underline;
+.nav-title-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
 }
+
+/* Create the underline effect */
+.nav-title-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* adjust depending on font */
+  width: 0;
+  height: 2px;
+  background-color: currentColor; /* matches text color */
+  transition: width 0.3s ease;
+}
+
+/* Animate underline on hover */
+.nav-title-link:hover::after {
+  width: 100%;
+}
+
+
 
 /* Small devices (portrait tablets and large phones, 800px and below) */
 @media only screen and (max-width: 800px) {
