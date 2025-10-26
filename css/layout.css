@@ -449,7 +449,7 @@ a.button.get-in-touch:focus-visible {
 }
 
 .footer-icon:hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
   filter: brightness(1.3);
 }
 
