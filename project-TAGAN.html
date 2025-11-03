@@ -1,124 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Projects | Cat P. Le Ph.D.</title>
-    <meta name="description" content="Research and Projects by Cat P. Le">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <title>Projects | Cat P. Le Ph.D.</title>
+  <meta name="description" content="Mode-Aware Continual Learning for cGANs (arXiv:2305.11400) — by Cat P. Le" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="physics.png" type="image/x-icon">
-    <link rel="icon" href="physics.png" type="image/x-icon">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="physics.png" type="image/x-icon" />
+  <link rel="icon" href="physics.png" type="image/x-icon" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/typography.css">
-    <link rel="stylesheet" href="./css/utilities.css">
+  <!-- Styles (assumes your existing CSS files) -->
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
 
-    <script defer src="./js/script.js"></script>
+  <script defer src="./js/script.js"></script>
+  <style>
+    :root { --accent: #0f766e; --muted: #64748b; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+    .paper-hero { text-align: center; margin: 96px 0 28px; }
+    .paper-title { font-family: 'Pacifico', cursive; font-size: 2.4rem; line-height: 1.2; }
+    .authors { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
+    .authors a { color: inherit; text-decoration: underline; }
+    .labels { display: inline-flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
+    .label { border: 1px solid #e2e8f0; padding: 6px 10px; border-radius: 999px; font-size: 0.82rem; color: #0f172a; background: #f8fafc; }
+    .cta { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+    .cta a { border: 1px solid #0f766e; color: #0f766e; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .cta a:hover { background: #0f766e; color: white; }
+
+    section { margin: 36px 0 20px; }
+    section h2 { font-size: 1.25rem; margin-bottom: 10px; color: #0f172a; }
+    section p { color: #0f172a; }
+    .keypoints { display: grid; gap: 10px; }
+    .keypoints li { margin-left: 1rem; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 850px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    .callout { border-left: 4px solid var(--accent); background: #ecfeff; padding: 12px 14px; border-radius: 8px; }
+    code.inline { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
+
+    /* Gallery overrides for nicer captions */
+    #project-gallery .image-caption { color: var(--muted); }
+  </style>
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <a class="nav-title-link" href="./index.html">
-            <span class="nav-title">🡰 Cat P. Le Ph.D.</span>
-        </a>
-        <a class="button get-in-touch" href="mailto:calvine.le@gmail.com">
-            <span class="button-text">Get in touch</span>
-        </a>
-    </div>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a class="nav-title-link" href="./index.html">
+      <span class="nav-title">← Cat P. Le Ph.D.</span>
+    </a>
+    <a class="button get-in-touch" href="mailto:calvine.le@gmail.com">
+      <span class="button-text">Get in touch</span>
+    </a>
+  </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main-content">
-        <div id="projects-header">
-            <h1 class="projects-title" style="font-family:'Pacifico', cursive; font-size:2.8rem; text-align:center; margin-top:100px;">
-                My Research & Projects
-            </h1>
-            <p style="text-align:center; font-size:1.1rem; color:#444; margin:10px auto 40px;">
-                Details Coming Soon!
-            </p>
+  <!-- MAIN CONTENT -->
+  <div id="main-content" class="container">
+    <header class="paper-hero">
+      <h1 class="paper-title">Mode‑Aware Continual Learning for Conditional GANs</h1>
+      <div class="authors">
+        Cat P. Le · Juncheng Dong · Ahmed Aloui · Vahid Tarokh
+      </div>
+      <div class="labels">
+        <span class="label">arXiv:2305.11400</span>
+        <span class="label">Machine Learning (cs.LG)</span>
+        <span class="label">Preprint • v3 • Sept 23, 2023</span>
+      </div>
+      <div class="cta">
+        <a href="https://arxiv.org/abs/2305.11400" target="_blank" rel="noopener">Abstract</a>
+        <a href="https://arxiv.org/pdf/2305.11400" target="_blank" rel="noopener">PDF</a>
+      </div>
+    </header>
+
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        We introduce a <strong>discriminator‑based Mode Affinity Score (dMAS)</strong> to quantify similarity between
+        <em>generative modes</em> (tasks) in conditional GANs, and a <strong>mode‑aware continual learning</strong> framework that
+        leverages relevant prior modes to quickly learn a new target mode while <em>avoiding catastrophic forgetting</em>.
+        The framework first evaluates which learned modes are closest to the target via dMAS, then injects a new
+        mode using a <em>weighted label embedding</em> derived from those closest modes, alongside <em>memory replay</em>.
+        Extensive experiments on <strong>MNIST</strong>, <strong>CIFAR‑10</strong>, <strong>CIFAR‑100</strong>, and <strong>Oxford Flowers</strong> show robust dMAS
+        behavior and competitive results versus baselines including sequential fine‑tuning, multi‑task learning,
+        EWC‑GAN, Lifelong‑GAN, and CAM‑GAN.
+      </p>
+    </section>
+
+    <section id="contributions">
+      <h2>Key Contributions</h2>
+      <ul class="keypoints">
+        <li>Propose <strong>dMAS</strong>, a task/mode similarity measure that reflects the <em>state of the GAN</em> by comparing discriminator parameter geometry.</li>
+        <li>Theoretical analysis (Theorem 1) proving properties and trade‑offs when <em>injecting new modes</em> into a trained model.</li>
+        <li>A <strong>mode‑aware continual learning</strong> procedure for cGANs that adds a target mode using a <em>linear combination</em> of closest modes’ label embeddings and <em>memory replay</em>.</li>
+      </ul>
+    </section>
+
+    <!-- IMAGE GALLERY (kept, with contextual captions) -->
+    <div id="project-gallery">
+      <div class="subheader-text">Image Gallery</div>
+      <div class="project-gallery-content">
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/TAGEN1.png" class="gallery-image" alt="Code snapshot" />
+          <span class="image-caption">The relationship between data classes from CIFAR-100 via the computed distances.</span>
         </div>
-
-
-    
-
-      
-
-      <!-- IMAGE GALLERY -->
-      <div id="project-gallery">
-        <!-- TODO - Change the 'subheader-text' to whatever you want the Gallery section header to say -->
-        <div class="subheader-text">Image Gallery</div>
-        <div class="project-gallery-content">
-            <!-- 
-              TODO
-
-              This is where the images in the gallery live. Here's a simple gallery image for you to copy:
-
-              Full Width Image:
-
-                <div class="gallery-image-container">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              Half Width Image: 
-
-                <div class="gallery-image-container half-width">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              - To add an image to the this area, copy one of the above, paste it below this comment, and change the following:
-                  - IMAGE_NAME: the name of the image file in assets/images
-                  - IMAGE_CAPTION: to the caption of the image
-            -->
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/code.jpeg" class="gallery-image">
-              <span class="image-caption">Not available.</span>
-            </div>
-            <div class="gallery-image-container half-width">
-              <img src="../assets/images/sketchbook.jpeg" class="gallery-image">
-              <span class="image-caption">Not available.</span>
-            </div>
-            <div class="gallery-image-container">
-              <img src="../assets/images/camera.jpeg" class="gallery-image">
-              <span class="image-caption">Not available.</span>
-            </div>
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/TAGAN2.png" class="gallery-image" alt="Notes" />
+          <span class="image-caption">The lifelong learning performance over all learned tasks for target tasks from CIFAR‑100.</span>
+        </div>
+        <div class="gallery-image-container">
+          <img src="./assets/images/TAGAN3.png" class="gallery-image" alt="Results montage" />
+          <span class="image-caption">The overview of mode-aware continual learning framework for the conditional GAN.</span>
         </div>
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer id="footer">
-        <div class="footer-icons">
-            <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/catple/">
-                <img src="./assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn"/>
-            </a>
-            <a class="icon-link" target="_blank" href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en">
-                <img src="./assets/icons/google.svg" class="footer-icon" alt="Google Scholar"/>
-            </a>
-            <a class="icon-link" target="_blank" href="https://github.com/lephuoccat">
-                <img src="./assets/icons/github.svg" class="footer-icon" alt="GitHub" />
-            </a>
-            <a class="icon-link" href="mailto:calvine.le@gmail.com">
-                <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email"/>
-            </a>
-        </div>
 
-        <div class="copyright">
-            © <span id="current-year"></span> Cat P. Le. All rights reserved.
+    <section id="method" class="grid-2">
+      <div>
+        <h2>Method in Brief</h2>
+        <ol class="keypoints">
+          <li>Train cGAN on existing modes (tasks).</li>
+          <li>Compute <strong>dMAS</strong> between each existing mode and the new target mode.</li>
+          <li>Select top‑<em>k</em> closest modes and form the target’s <em>weighted label embedding</em> using the normalized dMAS weights.</li>
+          <li>Fine‑tune cGAN on the target data while <strong>replaying</strong> samples from the relevant modes to preserve past performance.</li>
+        </ol>
+        <div class="callout" style="margin-top:10px;">
+          <strong>Target label embedding (conceptual):</strong>
+          <div style="margin-top:6px;">
+            <code class="inline">emb(y<sub>target</sub>) = Σ<sub>i∈C</sub> ( s<sub>i</sub> / Σ<sub>j∈C</sub> s<sub>j</sub> ) · emb(y<sub>i</sub>)</code>
+          </div>
+          <small>Where <code>s<sub>i</sub></code> are dMAS scores from relevant modes <code>i</code> to the target.</small>
         </div>
-    </footer>
+      </div>
+      <div>
+        <h2>Why dMAS?</h2>
+        <p>
+          Popular metrics like FID/IS compare <em>image distributions</em> and may not reflect the <em>model state</em>. In contrast,
+          dMAS leverages the <strong>discriminator</strong> to compute distances in parameter space (via Fisher Information–based
+          geometry), offering a stable similarity measure that is <em>invariant to initialization</em> and better aligned to
+          continual generative learning dynamics.
+        </p>
+      </div>
+    </section>
 
-    <script>
-      document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
+    <section id="experiments">
+      <h2>Experiments</h2>
+      <p>
+        We validate on <strong>MNIST</strong>, <strong>CIFAR‑10</strong>, <strong>CIFAR‑100</strong>, and <strong>Oxford Flowers</strong>. dMAS consistently identifies
+        semantically related modes (e.g., vehicles and animals on CIFAR‑100 ↔ CIFAR‑10), enabling efficient few‑shot
+        transfer to the target mode. With memory replay, the model preserves existing modes while integrating the new
+        one, achieving competitive performance against strong baselines.
+      </p>
+    </section>
+
+    <section id="resources" class="grid-2">
+      <div>
+        <h2>Citation</h2>
+        <pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
+          @article{le2023modeaware,
+            title={Mode-Aware Continual Learning for Conditional Generative Adversarial Networks},
+            author={Le, Cat P. and Dong, Juncheng and Aloui, Ahmed and Tarokh, Vahid},
+            journal={arXiv preprint arXiv:2305.11400},
+            year={2023}
+          }
+        </pre>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>Questions about this work? Reach out: <a href="mailto:calvine.le@gmail.com">calvine.le@gmail.com</a></p>
+        <p>More: <a href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+      </div>
+    </section>
+
+    
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-icons">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/catple/">
+        <img src="./assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en">
+        <img src="./assets/icons/google.svg" class="footer-icon" alt="Google Scholar" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://github.com/lephuoccat">
+        <img src="./assets/icons/github.svg" class="footer-icon" alt="GitHub" />
+      </a>
+      <a class="icon-link" href="mailto:calvine.le@gmail.com">
+        <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+      </a>
+    </div>
+
+    <div class="copyright">
+      © <span id="current-year"></span> Cat P. Le. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+
+  <button id="back-to-top" title="Go to top">↑</button>
 </body>
 </html>

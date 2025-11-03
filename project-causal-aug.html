@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects | CATE Estimation via Counterfactual Imputation</title>
+  <meta name="description" content="CATE Estimation With Potential Outcome Imputation From Local Regression (arXiv:2311.03630) — by Aloui, Dong, Le, Tarokh" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="shortcut icon" href="physics.png" type="image/x-icon" />
+  <link rel="icon" href="physics.png" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+    .paper-hero { text-align: center; margin: 96px 0 28px; }
+    .paper-title { font-family: 'Pacifico', cursive; font-size: 2.2rem; }
+    .labels { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+    .label { border:1px solid #e5e7eb; background:#f8fafc; padding:6px 10px; border-radius:999px; font-size:0.82rem; }
+    .cta { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+    .cta a { border:1px solid #0f766e; color:#0f766e; padding:8px 12px; border-radius:10px; text-decoration:none; font-weight:600; }
+    .cta a:hover { background:#0f766e; color:white; }
+
+    section { margin: 36px 0 20px; }
+    h2 { font-size:1.25rem; margin-bottom:10px; }
+    .grid-2 { display:grid; grid-template-columns:1fr; gap:18px; }
+    @media (min-width: 850px) { .grid-2 { grid-template-columns:1fr 1fr; } }
+
+    /* Gallery */
+    .project-gallery-content { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+    .gallery-image-container { position:relative; cursor:pointer; }
+    .gallery-image { width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition: transform .3s ease; }
+    .gallery-image:hover { transform:scale(1.03); }
+    .image-caption { position:absolute; bottom:8px; left:8px; background:rgba(0,0,0,.6); color:#fff; font-size:.9rem; padding:4px 8px; border-radius:6px; }
+    /* Lightbox */
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:999; align-items:center; justify-content:center; }
+    .lightbox:target { display:flex; }
+    .lightbox img { max-width:92%; max-height:92%; border-radius:12px; box-shadow:0 0 10px rgba(255,255,255,.3); }
+    .close-btn { position:absolute; top:20px; right:30px; color:#fff; font-size:2rem; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a class="nav-title-link" href="./index.html">
+      <span class="nav-title">← Cat P. Le Ph.D.</span>
+    </a>
+    <a class="button get-in-touch" href="mailto:calvine.le@gmail.com">
+      <span class="button-text">Get in touch</span>
+    </a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content" class="container">
+    <header class="paper-hero">
+      <h1 class="paper-title">CATE Estimation With Potential Outcome Imputation From Local Regression</h1>
+      <div>Ahmed Aloui · Juncheng Dong · <strong>Cat P. Le</strong> · Vahid Tarokh</div>
+      <div class="labels">
+        <span class="label">arXiv:2311.03630</span>
+        <span class="label">cs.LG • stat.ME • stat.ML</span>
+        <span class="label">Last revised: Jun 14, 2025 (v2)</span>
+      </div>
+      <div class="cta">
+        <a href="https://arxiv.org/abs/2311.03630" target="_blank" rel="noopener">Abstract</a>
+        <a href="https://arxiv.org/pdf/2311.03630" target="_blank" rel="noopener">PDF</a>
+        <a href="https://doi.org/10.48550/arXiv.2311.03630" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </header>
+
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        The work tackles a core issue in conditional average treatment effect (CATE) estimation: distributional mismatch between treatment groups. It introduces a <em>model‑agnostic</em> counterfactual data augmentation method that first derives regret bounds suggesting that small, carefully controlled imputation error can be beneficial. Using a contrastive learning scheme, the method imputes reliable missing potential outcomes for a selected subset of units (selected by a similarity rule), augments the dataset with these imputations to reduce group discrepancy, and then trains standard CATE estimators on the augmented data. Theory and extensive experiments show improved accuracy and robustness across many CATE models.
+      </p>
+    </section>
+
+    <section id="highlights" class="grid-2">
+      <div>
+        <h2>Key Ideas</h2>
+        <ul>
+          <li><strong>Regret bounds</strong> motivate when/why limited imputation error can aid CATE estimation.</li>
+          <li><strong>Contrastive imputation</strong> reliably imputes missing potential outcomes for a subset selected via similarity.</li>
+          <li><strong>Model‑agnostic augmentation</strong> plugs into common CATE learners after reducing cross‑group discrepancy.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Method Sketch</h2>
+        <ol>
+          <li>Compute a local similarity neighborhood for each unit via regression/local metrics.</li>
+          <li>Use contrastive learning to impute missing potential outcomes for a <em>reliable subset</em>.</li>
+          <li>Augment the dataset with these counterfactuals and train any downstream CATE model.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="experiments">
+      <h2>Experiments (at a glance)</h2>
+      <p>
+        The paper reports consistent gains on standard semi‑synthetic and benchmark setups for CATE, showing robustness across multiple base estimators. Improvements hold especially where treatment/control distributions differ substantially.
+      </p>
+    </section>
+
+
+    <!-- Lightbox Modals -->
+    <div id="f1" class="lightbox"><a class="close-btn" href="#">&times;</a><img src="./assets/images/cate-framework.png" alt="Framework overview" /></div>
+    <div id="f2" class="lightbox"><a class="close-btn" href="#">&times;</a><img src="./assets/images/contrastive-impute.png" alt="Contrastive imputation module" /></div>
+    <div id="f3" class="lightbox"><a class="close-btn" href="#">&times;</a><img src="./assets/images/cate-results.png" alt="Results across CATE baselines" /></div>
+
+    <section id="resources" class="grid-2">
+      <div>
+        <h2>Citation</h2>
+<pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
+@article{aloui2025cate,
+  title={CATE Estimation With Potential Outcome Imputation From Local Regression},
+  author={Aloui, Ahmed and Dong, Juncheng and Le, Cat P. and Tarokh, Vahid},
+  journal={arXiv preprint arXiv:2311.03630},
+  year={2025},
+  note={v2}
+}
+</pre>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>Questions about this work? Email: <a href="mailto:calvine.le@gmail.com">calvine.le@gmail.com</a></p>
+        <p>More publications: <a href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-icons">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/catple/">
+        <img src="./assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en">
+        <img src="./assets/icons/google.svg" class="footer-icon" alt="Google Scholar" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://github.com/lephuoccat">
+        <img src="./assets/icons/github.svg" class="footer-icon" alt="GitHub" />
+      </a>
+      <a class="icon-link" href="mailto:calvine.le@gmail.com">
+        <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+      </a>
+    </div>
+    <div class="copyright">© <span id="current-year"></span> Cat P. Le. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <button id="back-to-top" title="Go to top">↑</button>
+</html>
