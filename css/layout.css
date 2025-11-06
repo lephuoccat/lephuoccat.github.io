@@ -576,13 +576,13 @@ a.button.get-in-touch:focus-visible {
 .info-table .role {
   font-weight: 600;
   color: #555;
-  width: 38%;
+  width: 40%;
   padding-right: 8px;
 }
 
 .info-table .org {
   color: #555;
-  width: 37%;
+  width: 40%;
   padding-left: 4px;
 }
 
@@ -590,7 +590,7 @@ a.button.get-in-touch:focus-visible {
   text-align: right;
   color: #777;
   font-style: italic;
-  width: 25%;
+  width: 20%;
 }
 
 

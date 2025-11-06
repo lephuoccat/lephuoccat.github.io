@@ -70,83 +70,72 @@
   <!-- MAIN CONTENT -->
   <div id="main-content" class="container">
     <header class="paper-hero">
-      <h1 class="paper-title">Generative Models and Bootstrapping for Titanium Alloy Microstructure Analysis</h1>
+      <h1 class="paper-title">Improving Open-Domain Dialogue Evaluation with a Causal Inference Model</h1>
       <div class="authors">
-        Cat P. Le · Matthew LaRosa · Vahid Tarokh
+        Cat P. Le · Luke Dai · Michael Johnston · Yang Liu · Marilyn Walker · Reza Ghanadan
       </div>
       <div class="labels">
         <span class="label">arXiv:2305.11400</span>
         <span class="label">Machine Learning (cs.LG)</span>
-        <span class="label">Preprint • v1 • Nov 6, 2025</span>
+        <span class="label">Preprint • v1 • Jan 31, 2023</span>
       </div>
       <div class="cta">
-        <a href="https://arxiv.org/abs/2305.11400" target="_blank" rel="noopener">Abstract</a>
-        <a href="https://arxiv.org/pdf/2305.11400" target="_blank" rel="noopener">PDF</a>
+        <a href="https://arxiv.org/abs/2301.13372" target="_blank" rel="noopener">Abstract</a>
+        <a href="https://arxiv.org/pdf/2301.13372" target="_blank" rel="noopener">PDF</a>
       </div>
     </header>
 
     <section id="abstract">
       <h2>Abstract</h2>
       <p>
-        The electron backscatter diffraction (EBSD) process for titanium alloys is
-        complex, time-consuming, and expensive. Furthermore, up to 30% of scan
-        data points can be uncertain due to factors such as material surface properties, 
-        holding positions, or scanner limitations. These uncertainties present
-        significant challenges in understanding the material and its microstructure
-        distribution. This paper explores the application of machine learning generative models,
-        including generative adversarial networks (GANs) and normalizing flows, to capture the 
-        underlying representations of EBSD datasets with missing or uncertain points. The proposed
-        models are capable of reconstructing and generating synthetic EBSD scans of titanium alloys,
-        offering valuable potential for advanced applications such as fatigue and crack detection.
+        Effective evaluation methods remain a significant challenge for research on open-domain conversational dialogue systems. 
+        Explicit satisfaction ratings can be elicited from users, but users often do not provide ratings when asked, and those they give can be highly subjective. 
+        Post-hoc ratings by experts are an alternative, but these can be both expensive and complex to collect. Here, we explore the creation of automated methods 
+        for predicting both expert and user ratings of open-domain dialogues. We compare four different approaches. First, we train a baseline model using an end-to-end 
+        transformer to predict ratings directly from the raw dialogue text. The other three methods are variants of a two-stage approach in which we first extract 
+        interpretable features at the turn level that capture, among other aspects, user dialogue behaviors indicating contradiction, repetition, disinterest, 
+        compliments, or criticism. We project these features to the dialogue level and train a dialogue-level MLP regression model, a dialogue-level LSTM, 
+        and a novel causal inference model called counterfactual-LSTM (CF-LSTM) to predict ratings. The proposed CF-LSTM is a sequential model over turn-level 
+        features which predicts ratings using multiple regressors depending on hypotheses derived from the turn-level features. As a causal inference model, 
+        CF-LSTM aims to learn the underlying causes of a specific event, such as a low rating. We also bin the user ratings and perform classification experiments 
+        with all four models. In evaluation experiments on conversational data from the Alexa Prize SocialBot, we show that the CF-LSTM achieves the best performance 
+        for predicting dialogue ratings and classification.
       </p>
     </section>
 
     <section class="callout">
-      <p><strong>TL;DR:</strong> Electron backscatter diffraction (EBSD) for titanium alloys is a complex and costly process. This study investigates the 
-        use of machine learning generative models, such as GANs and normalizing flows, to address these uncertainties by learning 
-        representations from incomplete EBSD datasets.</p>
+      <p><strong>TL;DR:</strong> The paper introduces CF-LSTM, a causal inference model that predicts dialogue ratings by modeling user behaviors and counterfactual outcomes, outperforming traditional models in both regression and classification tasks. By leveraging interpretable features and treatment-based reasoning, it enables scalable and robust evaluation of open-domain dialogue systems.</p>
     </section>
 
     <div class="section">
-        <h2>Introduction</h2>
-        <p>EBSD is a critical technique for analyzing material microstructures, especially in aerospace applications. However, it is costly, time-consuming, 
-          and often results in incomplete data due to scanning limitations. This paper proposes using generative models to reconstruct and generate EBSD scans, 
-          improving data utility and enabling better material analysis.</p>
-    </div>
-
-    <div class="section">
-        <h2>Challenges</h2>
+        <h2>Motivation</h2>
+        <p>Evaluating open-domain dialogue systems is challenging due to:</p>
         <ul class="keypoints">
-            <li>High cost and complexity of EBSD scanning.</li>
-            <li>Limited availability of high-quality EBSD datasets (typically 5–10 scans).</li>
-            <li>Data heterogeneity across different scans prevents dataset merging.</li>
-            <li>Up to 30% of scan data may be missing or noisy due to detector and preparation issues.</li>
+          <li>Sparse and subjective user ratings</li>
+          <li>Expensive expert annotations</li>
+          <li>Automated metrics lacking nuance</li>
         </ul>
+        <p>The paper introduces a causal inference model to improve automated evaluation of dialogue systems.</p>
     </div>
 
     <section id="method" class="grid-2">
       <div>
-        <h2>Method in Brief</h2>
+        <h2>Models Compared</h2>
         <ul class="keypoints">
-          <li>Three EBSD datasets of titanium alloys were used, sourced from AFRL and RTX, each treated independently due to heterogeneity.</li>
-          <li>Scans were divided into 250×250 samples, and data augmentation (flipping, rotation, cropping) was applied to expand the training set.</li>
-          <li>GAN-based models (DCGAN, WGAN-GP, MisGAN) were implemented to generate and reconstruct EBSD scans, but showed limitations due to small datasets and mode collapse.</li>
-          <li>Flow-based models (PixelCNN, PixelCNN++) were employed for pixel-by-pixel generation and missing data imputation, showing superior performance and realism.</li>
-          <li>A Conditional PixelCNN++ model was developed to learn microstructural variations across different scan angles and material cuts.</li>
+          <li><strong>Transformer Baseline:</strong> End-to-end model using raw text.</li>
+          <li><strong>Dialogue-Level MLP:</strong> Aggregates turn-level features into dialogue-level inputs for regression.</li>
+          <li><strong>Dialogue-Level LSTM:</strong> Uses LSTM to model sequential turn-level features.</li>
+          <li><strong>Counterfactual LSTM (CF-LSTM):</strong> Novel causal model using treatment-based regressors and counterfactual reasoning.</li>
         </ul>
       </div>
       <div>
-        <h2>Model Architectures</h2>
-        <h3>GAN-based Models</h3>
+        <h2>Feature Engineering</h2>
+        <p>Turn-level features include:</p>
         <ul class="keypoints">
-            <li>DCGAN and WGAN-GP were used to generate EBSD scans but suffered from artifacts and mode collapse.</li>
-            <li>MisGAN attempted to learn missing data masks but overestimated missing regions and failed to reconstruct meaningful patterns.</li>
-        </ul>
-        <h3>Flow-based Models</h3>
-        <ul class="keypoints">
-            <li>PixelCNN and PixelCNN++ generated more realistic and structured scans.</li>
-            <li>PixelCNN++ improved over PixelCNN by reducing artifacts and modeling full pixel distributions.</li>
-            <li>Conditional PixelCNN++ captured variations across different material cuts (bore, transition, rim).</li>
+          <li><strong>ODES Classifier:</strong> Detects user behaviors (e.g., insult, compliment)</li>
+          <li><strong>Sentiment Analysis:</strong> Valence, satisfaction, activation</li>
+          <li><strong>DialogRPT & FED Metrics:</strong> Relevance, specificity, fluency</li>
+          <li><strong>ASR Confidence Scores:</strong> From speech recognition</li>
         </ul>
       </div>
     </section>
@@ -155,50 +144,50 @@
     <div id="project-gallery">
       <div class="subheader-text">Image Gallery</div>
       <div class="project-gallery-content">
-        <div class="gallery-image-container half-width">
-          <img src="./assets/images/EBSD1.png" class="gallery-image" alt="Code snapshot" />
-          <span class="image-caption">The synthetic EBSD scans generated by DCGAN model. This model suffered from mode collapse.</span>
-        </div>
-        <div class="gallery-image-container half-width">
-          <img src="./assets/images/EBSD2.png" class="gallery-image" alt="Notes" />
-          <span class="image-caption">The synthetic EBSD scans generated by WGAN-GP model. Similar to DCGAN, this model also suffered from mode collapse.</span>
+        <div class="gallery-image-container">
+          <img src="./assets/images/CFLSTM1.png" class="gallery-image" alt="Results montage" />
+          <span class="image-caption">The overview architecture of the proposed CF-LSTM model.</span>
         </div>
         <div class="gallery-image-container">
-          <img src="./assets/images/EBSD3.png" class="gallery-image" alt="Results montage" />
-          <span class="image-caption">The synthetic EBSD scans generated by PixelCNN++ model. This flow-based model showed superior performance and realism.</span>
+          <img src="./assets/images/CFLSTM2.png" class="gallery-image" alt="Results montage" />
+          <span class="image-caption">The comparisons between open-dialogue evaluation methods for the regression problem 
+            in terms of Pearson correlation (e.g., individual, L1d, L7d predictions) and the classification problem (e.g., binary, 5-class accuracy)
+            in terms of prediction accuracy, on SocialBot conversations.</span>
         </div>
       </div>
     </div>
 
+    <section id="method" class="grid-2">
     <div class="section">
-        <h2>Datasets</h2>
-        <ul class="keypoints">
-            <li>Three datasets from AFRL and RTX (Pratt & Whitney) were used.</li>
-            <li>Each dataset was processed independently due to heterogeneity.</li>
-            <li>Scans were divided into 250×250 samples, yielding ~1,000 samples per dataset after augmentation.</li>
-        </ul>
+      <h2>Causal Inference Framework</h2>
+      <ul>
+        <li>Uses treatment assignment based on ODES signals</li>
+        <li>Assumes observed confounders via extracted features</li>
+        <li>Trains separate regressors for treated vs. untreated dialogues</li>
+        <li>Loss function includes Integral Probability Metric (IPM) to reduce bias</li>
+      </ul>
     </div>
-
+  
     <div class="section">
-        <h2>Results</h2>
-        <ul class="keypoints">
-            <li>GANs produced low-quality samples with artifacts and lacked diversity.</li>
-            <li>MisGAN failed to learn accurate missing data masks.</li>
-            <li>PixelCNN++ generated high-quality, realistic EBSD scans with fewer artifacts.</li>
-            <li>Conditional PixelCNN++ successfully modeled distinct microstructures across different scan angles.</li>
+        <h2>Experiments & Results</h2>
+        <p>Using Alexa Prize SocialBot data, the models were evaluated on:</p>
+        <ul>
+          <li><strong>Regression:</strong> Predicting continuous ratings</li>
+          <li><strong>Classification:</strong> Binary and 5-class rating prediction</li>
         </ul>
+        <div class="highlight">
+          <strong>CF-LSTM outperformed all other models</strong> in both tasks, showing robustness to bias and variance in noisy data.
+        </div>
     </div>
     </section>
 
     <section id="contributions">
       <h2>Key Contributions</h2>
       <ul class="keypoints">
-        <li>Introduced generative machine learning models (GANs and flow-based models) to reconstruct and synthesize EBSD scans of titanium alloys.</li>
-        <li>Demonstrated that flow-based models (PixelCNN, PixelCNN++) outperform GANs in handling missing data and generating realistic microstructures, especially with limited datasets.</li>
-        <li>Developed a Conditional PixelCNN++ model to capture microstructural variations across different scan angles and material cuts.</li>
-        <li>Applied data augmentation techniques (cropping, flipping, rotation) to expand small EBSD datasets while preserving microstructural integrity.</li>
-        <li>Provided a comparative analysis of GAN-based and flow-based models, highlighting the limitations of GANs in EBSD modeling due to mode collapse and data scarcity.</li>
-        <li>Showed practical implications for aerospace materials analysis, including potential applications in fatigue detection and material classification.</li>
+        <li>Introduces CF-LSTM: a causal model for dialogue evaluation</li>
+        <li>Combines linguistic, acoustic, and behavioral features</li>
+        <li>Improves prediction accuracy and interpretability</li>
+        <li>Scales to large datasets for automated evaluation</li>
       </ul>
     </section>
 
@@ -206,12 +195,12 @@
       <div>
         <h2>Citation</h2>
         <pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
-          @article{le2023modeaware,
-            title={Generative Models and Bootstrapping for Titanium Alloy Microstructure Analysis},
-            author={Le, Cat P. and LaRosa, Matthew and Tarokh, Vahid},
-            journal={arXiv preprint arXiv:2305.11400},
-            year={2025}
-          }
+@article{le2023improving,
+title={Improving open-domain dialogue evaluation with a causal inference model},
+author={Le, Cat P and Dai, Luke and Johnston, Michael and Liu, Yang and Walker, Marilyn and Ghanadan, Reza},
+journal={arXiv preprint arXiv:2301.13372},
+year={2023}
+}
         </pre>
       </div>
       <div>
