@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects | Cat P. Le Ph.D.</title>
+  <meta name="description" content="Mode-Aware Continual Learning for cGANs (arXiv:2305.11400) — by Cat P. Le" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="physics.png" type="image/x-icon" />
+  <link rel="icon" href="physics.png" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles (assumes your existing CSS files) -->
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+
+  <script defer src="./js/script.js"></script>
+  <style>
+    :root { --accent: #0f766e; --muted: #64748b; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+    .paper-hero { text-align: center; margin: 96px 0 28px; }
+    .paper-title { font-family: 'Pacifico', cursive; font-size: 2.4rem; line-height: 1.2; }
+    .authors { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
+    .authors a { color: inherit; text-decoration: underline; }
+    .labels { display: inline-flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
+    .label { border: 1px solid #e2e8f0; padding: 6px 10px; border-radius: 999px; font-size: 0.82rem; color: #0f172a; background: #f8fafc; }
+    .cta { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+    .cta a { border: 1px solid #0f766e; color: #0f766e; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .cta a:hover { background: #0f766e; color: white; }
+
+    section { margin: 36px 0 20px; }
+    section h2 { font-size: 1.25rem; margin-bottom: 10px; color: #0f172a; }
+    section p { color: #0f172a; }
+    .keypoints { display: grid; gap: 10px; }
+    .keypoints li { margin-left: 1rem; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 850px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    .callout { border-left: 4px solid var(--accent); background: #ecfeff; padding: 12px 14px; border-radius: 8px; }
+    code.inline { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
+
+    /* Gallery */
+    .gallery-image { width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition: transform .3s ease; }
+    .gallery-image:hover { transform:scale(1.03); }
+    /* Gallery overrides for nicer captions */
+    #project-gallery .image-caption { color: var(--muted); }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a class="nav-title-link" href="./index.html">
+      <span class="nav-title">← Cat P. Le Ph.D.</span>
+    </a>
+    <a class="button get-in-touch" href="mailto:calvine.le@gmail.com">
+      <span class="button-text">Get in touch</span>
+    </a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content" class="container">
+    <header class="paper-hero">
+      <h1 class="paper-title">Generative Models and Bootstrapping for Titanium Alloy Microstructure Analysis</h1>
+      <div class="authors">
+        Cat P. Le · Matthew LaRosa · Vahid Tarokh
+      </div>
+      <div class="labels">
+        <span class="label">arXiv:2305.11400</span>
+        <span class="label">Machine Learning (cs.LG)</span>
+        <span class="label">Preprint • v1 • Nov 6, 2025</span>
+      </div>
+      <div class="cta">
+        <a href="https://arxiv.org/abs/2305.11400" target="_blank" rel="noopener">Abstract</a>
+        <a href="https://arxiv.org/pdf/2305.11400" target="_blank" rel="noopener">PDF</a>
+      </div>
+    </header>
+
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        The electron backscatter diffraction (EBSD) process for titanium alloys is
+        complex, time-consuming, and expensive. Furthermore, up to 30% of scan
+        data points can be uncertain due to factors such as material surface properties, 
+        holding positions, or scanner limitations. These uncertainties present
+        significant challenges in understanding the material and its microstructure
+        distribution. This paper explores the application of machine learning generative models,
+        including generative adversarial networks (GANs) and normalizing flows, to capture the 
+        underlying representations of EBSD datasets with missing or uncertain points. The proposed
+        models are capable of reconstructing and generating synthetic EBSD scans of titanium alloys,
+        offering valuable potential for advanced applications such as fatigue and crack detection.
+      </p>
+    </section>
+
+    <section class="callout">
+      <p><strong>TL;DR:</strong> Electron backscatter diffraction (EBSD) for titanium alloys is a complex and costly process. This study investigates the 
+        use of machine learning generative models, such as GANs and normalizing flows, to address these uncertainties by learning 
+        representations from incomplete EBSD datasets.</p>
+    </section>
+
+    <div class="section">
+        <h2>Introduction</h2>
+        <p>EBSD is a critical technique for analyzing material microstructures, especially in aerospace applications. However, it is costly, time-consuming, 
+          and often results in incomplete data due to scanning limitations. This paper proposes using generative models to reconstruct and generate EBSD scans, 
+          improving data utility and enabling better material analysis.</p>
+    </div>
+
+    <div class="section">
+        <h2>Challenges</h2>
+        <ul class="keypoints">
+            <li>High cost and complexity of EBSD scanning.</li>
+            <li>Limited availability of high-quality EBSD datasets (typically 5–10 scans).</li>
+            <li>Data heterogeneity across different scans prevents dataset merging.</li>
+            <li>Up to 30% of scan data may be missing or noisy due to detector and preparation issues.</li>
+        </ul>
+    </div>
+
+    <section id="method" class="grid-2">
+      <div>
+        <h2>Method in Brief</h2>
+        <ul class="keypoints">
+          <li>Three EBSD datasets of titanium alloys were used, sourced from AFRL and RTX, each treated independently due to heterogeneity.</li>
+          <li>Scans were divided into 250×250 samples, and data augmentation (flipping, rotation, cropping) was applied to expand the training set.</li>
+          <li>GAN-based models (DCGAN, WGAN-GP, MisGAN) were implemented to generate and reconstruct EBSD scans, but showed limitations due to small datasets and mode collapse.</li>
+          <li>Flow-based models (PixelCNN, PixelCNN++) were employed for pixel-by-pixel generation and missing data imputation, showing superior performance and realism.</li>
+          <li>A Conditional PixelCNN++ model was developed to learn microstructural variations across different scan angles and material cuts.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Model Architectures</h2>
+        <h3>GAN-based Models</h3>
+        <ul class="keypoints">
+            <li>DCGAN and WGAN-GP were used to generate EBSD scans but suffered from artifacts and mode collapse.</li>
+            <li>MisGAN attempted to learn missing data masks but overestimated missing regions and failed to reconstruct meaningful patterns.</li>
+        </ul>
+        <h3>Flow-based Models</h3>
+        <ul class="keypoints">
+            <li>PixelCNN and PixelCNN++ generated more realistic and structured scans.</li>
+            <li>PixelCNN++ improved over PixelCNN by reducing artifacts and modeling full pixel distributions.</li>
+            <li>Conditional PixelCNN++ captured variations across different material cuts (bore, transition, rim).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- IMAGE GALLERY (kept, with contextual captions) -->
+    <div id="project-gallery">
+      <div class="subheader-text">Image Gallery</div>
+      <div class="project-gallery-content">
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/EBSD1.png" class="gallery-image" alt="Code snapshot" />
+          <span class="image-caption">The synthetic EBSD scans generated by DCGAN model. This model suffered from mode collapse.</span>
+        </div>
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/EBSD2.png" class="gallery-image" alt="Notes" />
+          <span class="image-caption">The synthetic EBSD scans generated by WGAN-GP model. Similar to DCGAN, this model also suffered from mode collapse.</span>
+        </div>
+        <div class="gallery-image-container">
+          <img src="./assets/images/EBSD3.png" class="gallery-image" alt="Results montage" />
+          <span class="image-caption">The synthetic EBSD scans generated by PixelCNN++ model. This flow-based model showed superior performance and realism.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+        <h2>Datasets</h2>
+        <ul class="keypoints">
+            <li>Three datasets from AFRL and RTX (Pratt & Whitney) were used.</li>
+            <li>Each dataset was processed independently due to heterogeneity.</li>
+            <li>Scans were divided into 250×250 samples, yielding ~1,000 samples per dataset after augmentation.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Results</h2>
+        <ul class="keypoints">
+            <li>GANs produced low-quality samples with artifacts and lacked diversity.</li>
+            <li>MisGAN failed to learn accurate missing data masks.</li>
+            <li>PixelCNN++ generated high-quality, realistic EBSD scans with fewer artifacts.</li>
+            <li>Conditional PixelCNN++ successfully modeled distinct microstructures across different scan angles.</li>
+        </ul>
+    </div>
+    </section>
+
+    <section id="contributions">
+      <h2>Key Contributions</h2>
+      <ul class="keypoints">
+        <li>Introduced generative machine learning models (GANs and flow-based models) to reconstruct and synthesize EBSD scans of titanium alloys.</li>
+        <li>Demonstrated that flow-based models (PixelCNN, PixelCNN++) outperform GANs in handling missing data and generating realistic microstructures, especially with limited datasets.</li>
+        <li>Developed a Conditional PixelCNN++ model to capture microstructural variations across different scan angles and material cuts.</li>
+        <li>Applied data augmentation techniques (cropping, flipping, rotation) to expand small EBSD datasets while preserving microstructural integrity.</li>
+        <li>Provided a comparative analysis of GAN-based and flow-based models, highlighting the limitations of GANs in EBSD modeling due to mode collapse and data scarcity.</li>
+        <li>Showed practical implications for aerospace materials analysis, including potential applications in fatigue detection and material classification.</li>
+      </ul>
+    </section>
+
+    <section id="resources" class="grid-2">
+      <div>
+        <h2>Citation</h2>
+        <pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
+          @article{le2023modeaware,
+            title={Generative Models and Bootstrapping for Titanium Alloy Microstructure Analysis},
+            author={Le, Cat P. and LaRosa, Matthew and Tarokh, Vahid},
+            journal={arXiv preprint arXiv:2305.11400},
+            year={2025}
+          }
+        </pre>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>Questions about this work? Reach out: <a href="mailto:calvine.le@gmail.com">calvine.le@gmail.com</a></p>
+        <p>More: <a href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+      </div>
+    </section>
+
+    
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-icons">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/catple/">
+        <img src="./assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en">
+        <img src="./assets/icons/google.svg" class="footer-icon" alt="Google Scholar" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://github.com/lephuoccat">
+        <img src="./assets/icons/github.svg" class="footer-icon" alt="GitHub" />
+      </a>
+      <a class="icon-link" href="mailto:calvine.le@gmail.com">
+        <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+      </a>
+    </div>
+
+    <div class="copyright">
+      © <span id="current-year"></span> Cat P. Le. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+
+  <button id="back-to-top" title="Go to top">↑</button>
+</body>
+</html>

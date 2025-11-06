@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects | Cat P. Le Ph.D.</title>
+  <meta name="description" content="Mode-Aware Continual Learning for cGANs (arXiv:2305.11400) — by Cat P. Le" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="physics.png" type="image/x-icon" />
+  <link rel="icon" href="physics.png" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles (assumes your existing CSS files) -->
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/typography.css" />
+  <link rel="stylesheet" href="./css/utilities.css" />
+
+  <script defer src="./js/script.js"></script>
+  <style>
+    :root { --accent: #0f766e; --muted: #64748b; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+    .paper-hero { text-align: center; margin: 96px 0 28px; }
+    .paper-title { font-family: 'Pacifico', cursive; font-size: 2.4rem; line-height: 1.2; }
+    .authors { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
+    .authors a { color: inherit; text-decoration: underline; }
+    .labels { display: inline-flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
+    .label { border: 1px solid #e2e8f0; padding: 6px 10px; border-radius: 999px; font-size: 0.82rem; color: #0f172a; background: #f8fafc; }
+    .cta { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+    .cta a { border: 1px solid #0f766e; color: #0f766e; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .cta a:hover { background: #0f766e; color: white; }
+
+    section { margin: 36px 0 20px; }
+    section h2 { font-size: 1.25rem; margin-bottom: 10px; color: #0f172a; }
+    section p { color: #0f172a; }
+    .keypoints { display: grid; gap: 10px; }
+    .keypoints li { margin-left: 1rem; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 850px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    .callout { border-left: 4px solid var(--accent); background: #ecfeff; padding: 12px 14px; border-radius: 8px; }
+    code.inline { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
+
+    /* Gallery */
+    .gallery-image { width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition: transform .3s ease; }
+    .gallery-image:hover { transform:scale(1.03); }
+    /* Gallery overrides for nicer captions */
+    #project-gallery .image-caption { color: var(--muted); }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a class="nav-title-link" href="./index.html">
+      <span class="nav-title">← Cat P. Le Ph.D.</span>
+    </a>
+    <a class="button get-in-touch" href="mailto:calvine.le@gmail.com">
+      <span class="button-text">Get in touch</span>
+    </a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content" class="container">
+    <header class="paper-hero">
+      <h1 class="paper-title">Perceiving Copulas for Multimodal Time Series Forecasting</h1>
+      <div class="authors">
+        Cat P. Le · Chris Cannella · Ali Hasan · Yuting Ng · Vahid Tarokh
+      </div>
+      <div class="labels">
+        <span class="label">arXiv:2310.01720</span>
+        <span class="label">Machine Learning (cs.LG)</span>
+        <span class="label">Preprint • v2 • Jun 24, 2024</span>
+      </div>
+      <div class="cta">
+        <a href="https://arxiv.org/abs/2310.01720" target="_blank" rel="noopener">Abstract</a>
+        <a href="https://arxiv.org/pdf/2310.01720" target="_blank" rel="noopener">PDF</a>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10838953" target="_blank" rel="noopener">IEEE Xplore</a>
+      </div>
+    </header>
+
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Transformers have demonstrated remarkable efficacy in forecasting time series data. However, their extensive dependence on self-attention mechanisms demands 
+        significant computational resources, thereby limiting their practical applicability across diverse tasks, especially in multimodal problems. In this work, 
+        we propose a new architecture, called perceiver-CDF, for modeling cumulative distribution functions (CDF) of time series data. Our approach combines the perceiver 
+        architecture with a copula-based attention mechanism tailored for multimodal time series prediction. By leveraging the perceiver, our model efficiently transforms 
+        high-dimensional and multimodal data into a compact latent space, thereby significantly reducing computational demands. Subsequently, we implement a copula-based 
+        attention mechanism to construct the joint distribution of missing data for prediction. Further, we propose an output variance testing mechanism to effectively 
+        mitigate error propagation during prediction. To enhance efficiency and reduce complexity, we introduce midpoint inference for the local attention mechanism. This 
+        enables the model to efficiently capture dependencies within nearby imputed samples without considering all previous samples. The experiments on the unimodal and 
+        multimodal benchmarks consistently demonstrate a 20% improvement over state-of-the-art methods while utilizing less than half of the computational resources.
+      </p>
+    </section>
+
+    <section class="callout">
+      <p><strong>TL;DR:</strong> PrACTiS couples a Perceiver encoder with copula-based attention, plus midpoint inference, local attention, and output-variance testing to 
+        efficiently forecast multimodal time series with missing and asynchronous observations, achieving ~20% accuracy gains with < 50% memory usage compared to strong baselines.</p>
+    </section>
+
+    <section id="motivation">
+      <h2>1. Motivation</h2>
+      <p>Time-series forecasting must jointly capture <strong>global trends</strong> and <strong>local variations</strong> while coping 
+        with <strong>missing values</strong>, <strong>asynchronous measurements</strong>, and <strong>multimodal inputs</strong>. Transformer-based models perform well but are often 
+        computationally expensive due to heavy reliance on self-attention, limiting scalability in high-dimensional and incomplete settings.
+      </p>
+    
+    </section><section id="approach">
+      <h2>2. Proposed Approach – PrACTiS</h2>
+        <p>PrACTiS is a <strong>hybrid architecture</strong> that combines a <em>Perceiver</em> encoder with a <em>copula-based attention</em> 
+          mechanism to model the joint distribution of observations and missing data. The Perceiver compresses complex, multimodal inputs into a compact latent space; the copula-based
+          module captures inter-variable dependencies for robust imputation and forecasting.
+        </p>
+        <ul>
+          <li>
+            <strong>Perceiver encoder</strong>: tokenizes and projects inputs to a small latent array for efficient processing.
+          </li>
+          <li>
+            <strong>Copula-based attention</strong>: represents the joint distribution across variables/time, improving handling of 
+          missingness.
+          </li>
+          <li>
+            <strong>Midpoint inference</strong>: estimates intermediate values to better condition local dependencies.
+          </li>
+          <li>
+            <strong>Local attention</strong>: restricts context to nearby windows to reduce compute and memory.
+          </li>
+          <li>
+            <strong>Output variance testing</strong>: detects unstable predictions to curb error propagation 
+          during iterative decoding.
+          </li>
+        </ul>
+    </section>
+
+    <!-- IMAGE GALLERY (kept, with contextual captions) -->
+    <div id="project-gallery">
+      <div class="subheader-text">Image Gallery</div>
+      <div class="project-gallery-content">
+        <div class="gallery-image-container">
+          <img src="./assets/images/project_practis.png" class="gallery-image" alt="Results montage" />
+          <span class="image-caption">The overview architecture of PrACTiS.</span>
+        </div>
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/practis1.png" class="gallery-image" alt="Code snapshot" />
+          <span class="image-caption">The predicted samples by TACTiS for one-month forecasts, corresponding to 672 time-steps, conditioned on one-month historical data 
+            in electricity dataset.</span>
+        </div>
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/practis2.png" class="gallery-image" alt="Notes" />
+          <span class="image-caption">The predicted samples by PrACTiS for one-month forecasts, corresponding to 672 time-steps, conditioned on one-month historical data 
+            in electricity dataset.</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="technical" class="grid-2">
+      <div>
+        <h2>3. Technical Highlights</h2>
+        <p>
+          <ul>
+            <li>
+              <strong>Complexity</strong>: avoids the quadratic scaling of full self-attention by operating in latent space and using local attention.
+            </li>
+            <li>
+              <strong>Multimodality</strong>: the Perceiver cleanly ingests heterogeneous inputs (e.g., sensors, categorical/continuous features).
+            </li>
+            <li>
+              <strong>Missing data</strong>: copula-based attention explicitly models dependencies to impute and forecast when observations are sparse or asynchronous.
+            </li>
+          </ul>
+        </p>
+      </div>
+      <div>
+        <h2>4. Results (High-Level)</h2>
+        <p>Across unimodal and multimodal benchmarks, PrACTiS reports about a <strong>20% accuracy improvement</strong> over strong baselines while using <strong>less 
+          than half</strong> the memory. Efficiency gains come from the Perceiver's latent bottleneck and local attention, without sacrificing accuracy on long sequences 
+          with missingness.
+        </p>
+      </div>
+      </section>
+
+    <section id="contributions">
+      <h2>Key Contributions</h2>
+      <ul class="keypoints">
+        <li>Introduces a hybrid architecture combining Perceiver and copula-based attention for time-series forecasting.</li>
+        <li>Reduces computational complexity through latent space transformation and local attention mechanisms.</li>
+        <li>Implements midpoint inference and output variance testing to handle missing data effectively.</li>
+        <li>Achieves 20% performance improvement over state-of-the-art methods with reduced memory usage.</li>
+        <li>The proposed method can be applied to wide domains include <strong>healthcare</strong> (irregular vitals), <strong>finance</strong> (asynchronous indicators), and <strong>IoT</strong> (multimodal sensors), where observations are often incomplete or misaligned.</li>
+
+    </section>
+
+    <section id="resources" class="grid-2">
+      <div>
+        <h2>Citation</h2>
+        <pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
+@INPROCEEDINGS{10838953,
+author={Le, Cat P. and Cannella, Chris and Hasan, Ali and Ng, Yuting and Tarokh, Vahid},
+booktitle={2024 Winter Simulation Conference (WSC)}, 
+title={Perceiving Copulas for Multimodal Time Series Forecasting}, 
+year={2024},
+volume={},
+number={},
+pages={690-701},
+keywords={Limiting;Computational modeling;Time series analysis;Focusing;Transforms;Predictive models;Transformers;Encoding;Forecasting;Distribution functions},
+doi={10.1109/WSC63780.2024.10838953}}
+        </pre>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>Questions about this work? Reach out: <a href="mailto:calvine.le@gmail.com">calvine.le@gmail.com</a></p>
+        <p>More: <a href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+      </div>
+    </section>
+
+    
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-icons">
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/catple/">
+        <img src="./assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://scholar.google.com/citations?user=gSzKGdQAAAAJ&hl=en">
+        <img src="./assets/icons/google.svg" class="footer-icon" alt="Google Scholar" />
+      </a>
+      <a class="icon-link" target="_blank" href="https://github.com/lephuoccat">
+        <img src="./assets/icons/github.svg" class="footer-icon" alt="GitHub" />
+      </a>
+      <a class="icon-link" href="mailto:calvine.le@gmail.com">
+        <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email" />
+      </a>
+    </div>
+
+    <div class="copyright">
+      © <span id="current-year"></span> Cat P. Le. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+
+  <button id="back-to-top" title="Go to top">↑</button>
+</body>
+</html>

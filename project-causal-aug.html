@@ -18,33 +18,37 @@
   <link rel="stylesheet" href="./css/typography.css" />
   <link rel="stylesheet" href="./css/utilities.css" />
 
-  <style>
-    body { font-family: Inter, system-ui, sans-serif; }
+   <style>
+    :root { --accent: #0f766e; --muted: #64748b; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
     .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
     .paper-hero { text-align: center; margin: 96px 0 28px; }
-    .paper-title { font-family: 'Pacifico', cursive; font-size: 2.2rem; }
-    .labels { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
-    .label { border:1px solid #e5e7eb; background:#f8fafc; padding:6px 10px; border-radius:999px; font-size:0.82rem; }
-    .cta { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
-    .cta a { border:1px solid #0f766e; color:#0f766e; padding:8px 12px; border-radius:10px; text-decoration:none; font-weight:600; }
-    .cta a:hover { background:#0f766e; color:white; }
+    .paper-title { font-family: 'Pacifico', cursive; font-size: 2.4rem; line-height: 1.2; }
+    .authors { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
+    .authors a { color: inherit; text-decoration: underline; }
+    .labels { display: inline-flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
+    .label { border: 1px solid #e2e8f0; padding: 6px 10px; border-radius: 999px; font-size: 0.82rem; color: #0f172a; background: #f8fafc; }
+    .cta { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+    .cta a { border: 1px solid #0f766e; color: #0f766e; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .cta a:hover { background: #0f766e; color: white; }
 
     section { margin: 36px 0 20px; }
-    h2 { font-size:1.25rem; margin-bottom:10px; }
-    .grid-2 { display:grid; grid-template-columns:1fr; gap:18px; }
-    @media (min-width: 850px) { .grid-2 { grid-template-columns:1fr 1fr; } }
+    section h2 { font-size: 1.25rem; margin-bottom: 10px; color: #0f172a; }
+    section p { color: #0f172a; }
+    .keypoints { display: grid; gap: 10px; }
+    .keypoints li { margin-left: 1rem; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 850px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    .callout { border-left: 4px solid var(--accent); background: #ecfeff; padding: 12px 14px; border-radius: 8px; }
+    code.inline { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
 
     /* Gallery */
-    .project-gallery-content { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
-    .gallery-image-container { position:relative; cursor:pointer; }
     .gallery-image { width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition: transform .3s ease; }
     .gallery-image:hover { transform:scale(1.03); }
-    .image-caption { position:absolute; bottom:8px; left:8px; background:rgba(0,0,0,.6); color:#fff; font-size:.9rem; padding:4px 8px; border-radius:6px; }
-    /* Lightbox */
-    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:999; align-items:center; justify-content:center; }
-    .lightbox:target { display:flex; }
-    .lightbox img { max-width:92%; max-height:92%; border-radius:12px; box-shadow:0 0 10px rgba(255,255,255,.3); }
-    .close-btn { position:absolute; top:20px; right:30px; color:#fff; font-size:2rem; text-decoration:none; }
+    /* Gallery overrides for nicer captions */
+    #project-gallery .image-caption { color: var(--muted); }
   </style>
 </head>
 <body>
@@ -82,6 +86,12 @@
       </p>
     </section>
 
+    <section class="callout">
+      <p><strong>TL;DR:</strong> The paper tackles the challenge of estimating Conditional Average Treatment Effects (CATE) when there's a statistical imbalance between treatment 
+        groups. It introduces a model-agnostic counterfactual data augmentation method using contrastive learning to learn a representation space where similar individuals have 
+        similar potential outcomes.</p>
+    </section>
+
     <section id="highlights" class="grid-2">
       <div>
         <h2>Key Ideas</h2>
@@ -101,6 +111,25 @@
       </div>
     </section>
 
+    <!-- IMAGE GALLERY (kept, with contextual captions) -->
+    <div id="project-gallery">
+      <div class="subheader-text">Image Gallery</div>
+      <div class="project-gallery-content">
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/causal1.png" class="gallery-image" alt="Code snapshot" />
+          <span class="image-caption">t-SNE visualization of IHDP features and potential outcome Y0 in the ambient space.</span>
+        </div>
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/causal2.png" class="gallery-image" alt="Notes" />
+          <span class="image-caption">t-SNE visualization of IHDP features and potential outcome Y0 in the latent space.</span>
+        </div>
+        <div class="gallery-image-container">
+          <img src="./assets/images/causal3.png" class="gallery-image" alt="Results montage" />
+          <span class="image-caption">Effects of COCOA on preventing overfitting. From left to right: IHDP with TARNet, CFR-Wass, and T-learner.</span>
+        </div>
+      </div>
+    </div>
+
     <section id="experiments">
       <h2>Experiments (at a glance)</h2>
       <p>
@@ -117,15 +146,19 @@
     <section id="resources" class="grid-2">
       <div>
         <h2>Citation</h2>
-<pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
-@article{aloui2025cate,
-  title={CATE Estimation With Potential Outcome Imputation From Local Regression},
-  author={Aloui, Ahmed and Dong, Juncheng and Le, Cat P. and Tarokh, Vahid},
-  journal={arXiv preprint arXiv:2311.03630},
-  year={2025},
-  note={v2}
+          <pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
+@inproceedings{10.5555/3762387.3762391,
+author = {Aloui, Ahmed and Dong, Juncheng and Le, Cat P. and Tarokh, Vahid},
+title = {CATE estimation with potential outcome imputation from local regression},
+year = {2025},
+publisher = {JMLR.org},
+booktitle = {Proceedings of the Forty-First Conference on Uncertainty in Artificial Intelligence},
+articleno = {4},
+numpages = {27},
+location = {Rio de Janeiro, Brazil},
+series = {UAI '25}
 }
-</pre>
+          </pre>
       </div>
       <div>
         <h2>Contact</h2>

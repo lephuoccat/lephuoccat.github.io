@@ -48,6 +48,9 @@
     .callout { border-left: 4px solid var(--accent); background: #ecfeff; padding: 12px 14px; border-radius: 8px; }
     code.inline { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
 
+    /* Gallery */
+    .gallery-image { width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition: transform .3s ease; }
+    .gallery-image:hover { transform:scale(1.03); }
     /* Gallery overrides for nicer captions */
     #project-gallery .image-caption { color: var(--muted); }
   </style>
@@ -96,33 +99,11 @@
       </p>
     </section>
 
-    <section id="contributions">
-      <h2>Key Contributions</h2>
-      <ul class="keypoints">
-        <li>Propose <strong>dMAS</strong>, a task/mode similarity measure that reflects the <em>state of the GAN</em> by comparing discriminator parameter geometry.</li>
-        <li>Theoretical analysis (Theorem 1) proving properties and trade‑offs when <em>injecting new modes</em> into a trained model.</li>
-        <li>A <strong>mode‑aware continual learning</strong> procedure for cGANs that adds a target mode using a <em>linear combination</em> of closest modes’ label embeddings and <em>memory replay</em>.</li>
-      </ul>
+    <section class="callout">
+      <p><strong>TL;DR:</strong> This paper introduces a novel mode-aware continual learning method for Conditional Generative Adversarial Networks (cGANs). The key 
+        challenge addressed is how to learn new data distributions (modes) with limited samples while preserving previously learned ones—a common issue known as 
+        catastrophic forgetting.</p>
     </section>
-
-    <!-- IMAGE GALLERY (kept, with contextual captions) -->
-    <div id="project-gallery">
-      <div class="subheader-text">Image Gallery</div>
-      <div class="project-gallery-content">
-        <div class="gallery-image-container half-width">
-          <img src="./assets/images/TAGEN1.png" class="gallery-image" alt="Code snapshot" />
-          <span class="image-caption">The relationship between data classes from CIFAR-100 via the computed distances.</span>
-        </div>
-        <div class="gallery-image-container half-width">
-          <img src="./assets/images/TAGAN2.png" class="gallery-image" alt="Notes" />
-          <span class="image-caption">The lifelong learning performance over all learned tasks for target tasks from CIFAR‑100.</span>
-        </div>
-        <div class="gallery-image-container">
-          <img src="./assets/images/TAGAN3.png" class="gallery-image" alt="Results montage" />
-          <span class="image-caption">The overview of mode-aware continual learning framework for the conditional GAN.</span>
-        </div>
-      </div>
-    </div>
 
 
     <section id="method" class="grid-2">
@@ -152,6 +133,28 @@
         </p>
       </div>
     </section>
+    
+    <!-- IMAGE GALLERY (kept, with contextual captions) -->
+    <div id="project-gallery">
+      <div class="subheader-text">Image Gallery</div>
+      <div class="project-gallery-content">
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/TAGEN1.png" class="gallery-image" alt="Code snapshot" />
+          <span class="image-caption">The relationship between data classes from CIFAR-100 via the computed distances.</span>
+        </div>
+        <div class="gallery-image-container half-width">
+          <img src="./assets/images/TAGAN2.png" class="gallery-image" alt="Notes" />
+          <span class="image-caption">The lifelong learning performance over all learned tasks for target tasks from CIFAR‑100.</span>
+        </div>
+        <div class="gallery-image-container">
+          <img src="./assets/images/TAGAN3.png" class="gallery-image" alt="Results montage" />
+          <span class="image-caption">The overview of mode-aware continual learning framework for the conditional GAN.</span>
+        </div>
+      </div>
+    </div>
+
+
+    
 
     <section id="experiments">
       <h2>Experiments</h2>
@@ -163,16 +166,26 @@
       </p>
     </section>
 
+    <section id="contributions">
+      <h2>Key Contributions</h2>
+      <ul class="keypoints">
+        <li>Propose <strong>dMAS</strong>, a task/mode similarity measure that reflects the <em>state of the GAN</em> by comparing discriminator parameter geometry.</li>
+        <li>Theoretical analysis (Theorem 1) proving properties and trade‑offs when <em>injecting new modes</em> into a trained model.</li>
+        <li>A <strong>mode‑aware continual learning</strong> procedure for cGANs that adds a target mode using a <em>linear combination</em> of closest modes’ label embeddings and <em>memory replay</em>.</li>
+      </ul>
+    </section>
+
+
     <section id="resources" class="grid-2">
       <div>
         <h2>Citation</h2>
         <pre style="white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px; overflow:auto;">
-          @article{le2023modeaware,
-            title={Mode-Aware Continual Learning for Conditional Generative Adversarial Networks},
-            author={Le, Cat P. and Dong, Juncheng and Aloui, Ahmed and Tarokh, Vahid},
-            journal={arXiv preprint arXiv:2305.11400},
-            year={2023}
-          }
+@article{le2023modeaware,
+title={Mode-Aware Continual Learning for Conditional Generative Adversarial Networks},
+author={Le, Cat P. and Dong, Juncheng and Aloui, Ahmed and Tarokh, Vahid},
+journal={arXiv preprint arXiv:2305.11400},
+year={2023}
+}
         </pre>
       </div>
       <div>
