@@ -453,6 +453,17 @@ a.button.get-in-touch:focus-visible {
   transform: scale(1.5);
 }
 
+.footer-icon-rtx {
+  width: 52px;
+  height: 24px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform: translateY(6px); /* move icon 6px lower */
+}
+
+.footer-icon-rtx:hover {
+  transform: scale(1.5);
+}
+
 .copyright {
   font-size: 0.9rem;
   opacity: 0.8;
@@ -668,4 +679,9 @@ a.button.get-in-touch:focus-visible {
 @media (prefers-color-scheme: dark) {
   #footer { color: #e0e0e0; }
   .footer-icon:hover { filter: brightness(2); }
+}
+
+@media (prefers-color-scheme: dark) {
+  #footer { color: #e0e0e0; }
+  .footer-icon-rtx:hover { filter: brightness(2); }
 }
